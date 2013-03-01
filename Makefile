@@ -17,7 +17,7 @@ OBJ = $(patsubst %,$(OBJDIR)/%,$(_OBJ))
 
 
 $(OBJDIR)/%.o: %.c $(DEPS)
-  @mkdir -p obj
+	@mkdir -p obj
 	$(CROSS_COMPILE)gcc $(CFLAGS) -c -o $@ $< 
 
 $(TARGET): $(OBJ)
