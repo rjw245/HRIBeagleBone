@@ -16,12 +16,12 @@ START:
 
     MOV r1, 100
 BLINK:
-    SET R30.r15 //Set GPIO13 HIGH
+    SET R30.b15 //Set GPIO13 HIGH
     MOV r0, 0x00f00000
 DELAY:
     SUB r0, r0, 1
     QBNE DELAY, r0, 0
-    CLR R30.r15 // set GPIO1_13 low
+    CLR R30.b15 // set GPIO1_13 low
     MOV r0, 0x00f00000
 DELAY2:
     SUB r0, r0, 1
