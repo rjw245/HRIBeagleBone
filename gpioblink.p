@@ -18,14 +18,14 @@ START:
 BLINK:
     SET r30.t15 //Set GPIO13 HIGH
     MOV r0, 0x00f00000 //Counter for delay loop
-DELAY:
-    SUB r0, r0, 1
+DELAY: //Delay for when LED high
+    SUB r0, r0, 1 //Subtract from counter
     QBNE DELAY, r0, 0
     CLR r30.t15 // set GPIO1_13 low
     MOV r0, 0x00f00000 //Counter for delay loop
-DELAY2:
-    SUB r0, r0, 1
-    QBNE DELAY2, r0, 0
+DELAY2: //Delay for when LED low
+    SUB r0, r0, 1 //Subtract from counter
+    QBNE DELAY2, r0, 0 //Branch if counter not 0
     SUB r1, r1, 1
     QBNE BLINK, r1, 0
 
